@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEFTest", "MEFTest\MEFTest.csproj", "{1769B70E-007E-4075-953E-BD04AA302732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver1", "Driver1\Driver1.csproj", "{DCEFD170-CFD6-469C-9F01-35FEB3790F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver2", "Driver2\Driver2.csproj", "{1184D925-2ACC-4612-982D-982C94053F6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1769B70E-007E-4075-953E-BD04AA302732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1769B70E-007E-4075-953E-BD04AA302732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1769B70E-007E-4075-953E-BD04AA302732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1769B70E-007E-4075-953E-BD04AA302732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEFD170-CFD6-469C-9F01-35FEB3790F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEFD170-CFD6-469C-9F01-35FEB3790F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEFD170-CFD6-469C-9F01-35FEB3790F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEFD170-CFD6-469C-9F01-35FEB3790F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1184D925-2ACC-4612-982D-982C94053F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1184D925-2ACC-4612-982D-982C94053F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1184D925-2ACC-4612-982D-982C94053F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1184D925-2ACC-4612-982D-982C94053F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AD7EDD8-47E6-42A3-823A-EE4A06BCFBA0}
+	EndGlobalSection
+EndGlobal
