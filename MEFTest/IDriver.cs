@@ -10,7 +10,7 @@ namespace MEFTest
     {
         bool Load();
 
-        List<Alarm> getActiveAlarms();
+        List<Alarm> GetActiveAlarms();
 
         bool Unload();
     }

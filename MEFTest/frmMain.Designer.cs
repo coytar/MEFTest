@@ -1,6 +1,6 @@
 ﻿namespace MEFTest
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.btnLoad.TabIndex = 2;
             this.btnLoad.Text = "&Load >";
             this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btnLoad.Click += new System.EventHandler(this.BtnLoad_Click);
             // 
             // lstAlarms
             // 
@@ -85,7 +85,7 @@
             this.btnGetAlarms.TabIndex = 3;
             this.btnGetAlarms.Text = "&Get Alarms";
             this.btnGetAlarms.UseVisualStyleBackColor = true;
-            this.btnGetAlarms.Click += new System.EventHandler(this.btnGetAlarms_Click);
+            this.btnGetAlarms.Click += new System.EventHandler(this.BtnGetAlarms_Click);
             // 
             // lstLoadedDrivers
             // 
@@ -135,7 +135,6 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MEFTest";
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace MEFTest
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
         CompositionContainer container = null;
         Dictionary<string, string> driverPaths = new Dictionary<string, string>();
         Dictionary<string, int> driverInstances = new Dictionary<string, int>();
 
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
 
@@ -54,14 +54,14 @@ namespace MEFTest
             if (driverInstances.ContainsKey(name))
             {
                 int i = driverInstances[name];
-                i = i + 1;
+                i += 1;
                 driverInstances[name] = i;
-                name = name + i.ToString();
+                name += i.ToString();
             }
             else
             {
                 driverInstances.Add(name, 0);
-                name = name + "0";
+                name += "0";
             }
 
             // Add the instance to the container
@@ -69,25 +69,20 @@ namespace MEFTest
             lstLoadedDrivers.Items.Add(name);
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void BtnLoad_Click(object sender, EventArgs e)
         {
             string driverName = lstDriversList.SelectedItem.ToString();
             LoadDriver(driverName);
         }
 
-        private void btnGetAlarms_Click(object sender, EventArgs e)
+        private void BtnGetAlarms_Click(object sender, EventArgs e)
         {
             // Get the instance from the container
             string driverInstanceName = lstLoadedDrivers.SelectedItem.ToString();
             IDriver driver = container.GetExportedValue<IDriver>(driverInstanceName);
 
             lstAlarms.Items.Clear();
-            foreach (Alarm alm in driver.getActiveAlarms())
+            foreach (Alarm alm in driver.GetActiveAlarms())
             {
                 lstAlarms.Items.Add(alm.Source + "," + alm.Tag + "," + alm.Description);
             }

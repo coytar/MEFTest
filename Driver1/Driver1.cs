@@ -14,7 +14,7 @@ namespace MEFTest
 
         public Driver1()
         {
-            _generateNewAlarms();
+            GenerateNewAlarms();
 
             Task t1 = Task.Factory.StartNew(() => SomeTask());
         }
@@ -30,12 +30,12 @@ namespace MEFTest
             }
         }
 
-        List<Alarm> IDriver.getActiveAlarms()
+        List<Alarm> IDriver.GetActiveAlarms()
         {
             return alarms;
         }
 
-        protected void _generateNewAlarms()
+        protected void GenerateNewAlarms()
         {
             DateTime d = DateTime.Now;
             Random r = new Random(d.Millisecond);
@@ -43,11 +43,14 @@ namespace MEFTest
 
             for (int i = 0; i < count; i++)
             {
-                Alarm alm = new Alarm();
-                alm.Source = "Driver1";
-                alm.Tag = "Tag" + d.Second + "_" + d.Millisecond;
-                alm.Name = "Name for " + alm.Tag;
-                alm.Description = d.Second.ToString();
+                string tagName = "Tag" + d.Second + "_" + d.Millisecond;
+                Alarm alm = new Alarm()
+                {
+                    Source = "Driver1",
+                    Tag = tagName,
+                    Name = "Name for " + tagName,
+                    Description = d.Second.ToString()
+                };
                 alarms.Add(alm);
             }
         }
