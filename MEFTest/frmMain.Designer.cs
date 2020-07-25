@@ -36,6 +36,7 @@
             this.lstLoadedDrivers = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnUnload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstDriversList
@@ -59,7 +60,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(212, 91);
+            this.btnLoad.Location = new System.Drawing.Point(214, 30);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(76, 67);
@@ -116,12 +117,24 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Alarms:";
             // 
-            // frmMain
+            // btnUnload
+            // 
+            this.btnUnload.Location = new System.Drawing.Point(214, 114);
+            this.btnUnload.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUnload.Name = "btnUnload";
+            this.btnUnload.Size = new System.Drawing.Size(76, 67);
+            this.btnUnload.TabIndex = 2;
+            this.btnUnload.Text = "< &Unload";
+            this.btnUnload.UseVisualStyleBackColor = true;
+            this.btnUnload.Click += new System.EventHandler(this.btnUnload_Click);
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 250);
             this.Controls.Add(this.btnGetAlarms);
+            this.Controls.Add(this.btnUnload);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -132,7 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MEFTest";
             this.ResumeLayout(false);
@@ -150,6 +163,7 @@
         private System.Windows.Forms.ListBox lstLoadedDrivers;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUnload;
     }
 }
 

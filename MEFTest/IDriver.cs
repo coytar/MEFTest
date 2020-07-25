@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MEFTest
 {
-    public interface IDriver
+    public interface IDriver : IDisposable
     {
         bool Load();
 

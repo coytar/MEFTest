@@ -51,28 +51,46 @@ namespace MEFTest
 
             // Generate a unique name for each instance
             string name = driverName;
-            if (driverInstances.ContainsKey(name))
-            {
-                int i = driverInstances[name];
-                i += 1;
-                driverInstances[name] = i;
-                name += i.ToString();
-            }
-            else
-            {
-                driverInstances.Add(name, 0);
-                name += "0";
-            }
+            //if (driverInstances.ContainsKey(name))
+            //{
+            //    int i = driverInstances[name];
+            //    i += 1;
+            //    driverInstances[name] = i;
+            //    name += i.ToString();
+            //}
+            //else
+            //{
+            //    driverInstances.Add(name, 0);
+            //    name += "0";
+            //}
 
             // Add the instance to the container
             container.ComposeExportedValue<IDriver>(name, objDLL);
             lstLoadedDrivers.Items.Add(name);
         }
 
+        public void UnloadDriver(string driverInstanceName)
+        {
+            IDriver driver = container.GetExportedValue<IDriver>(driverInstanceName);
+            driver.Dispose();
+
+            Lazy<IDriver> driverExport = container.GetExport<IDriver>(driverInstanceName);
+            container.ReleaseExport(driverExport);
+
+            //int i = lstLoadedDrivers.Items.IndexOf(driverInstanceName);
+            //lstLoadedDrivers.Items.RemoveAt(i);
+        }
+
         private void BtnLoad_Click(object sender, EventArgs e)
         {
             string driverName = lstDriversList.SelectedItem.ToString();
             LoadDriver(driverName);
+        }
+
+        private void btnUnload_Click(object sender, EventArgs e)
+        {
+            string driverInstanceName = lstLoadedDrivers.SelectedItem.ToString();
+            UnloadDriver(driverInstanceName);
         }
 
         private void BtnGetAlarms_Click(object sender, EventArgs e)
